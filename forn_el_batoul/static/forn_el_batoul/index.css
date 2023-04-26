@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
+body {
+  margin: 0;
+}
+
+/* Contrents' wrapper */
+.wrapper {
+  height: 90vh;
+  width: 100vw;
+  /* flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Main container */
+}
+.wrapper .main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Oven icon */
+  /* welcoming txt */
+  /* Buttons for language optons */
+}
+.wrapper .main-container img {
+  height: auto;
+  width: 180px;
+  margin-bottom: 5px;
+}
+.wrapper .main-container .welcome {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #B79B4B;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+.wrapper .main-container .header {
+  font-size: 55px;
+  color: #000000;
+  font-weight: 400;
+  font-family: "Bruno Ace SC", cursive;
+  text-align: center;
+}
+@media (max-width: 570px) {
+  .wrapper .main-container .header {
+    font-size: 36px;
+  }
+}
+@media (max-width: 360px) {
+  .wrapper .main-container .header {
+    font-size: 30px;
+  }
+}
+@media (max-width: 320px) {
+  .wrapper .main-container .header {
+    font-size: 40px;
+  }
+}
+.wrapper .main-container .option-1 {
+  margin-top: 20px;
+}
+.wrapper .main-container .option {
+  background-color: #B79B4B;
+  width: 200px;
+  height: 40px;
+  color: black;
+  transition: background-color 1s, color 1s;
+  margin-bottom: 10px;
+}
+.wrapper .main-container .option:hover {
+  background-color: #000000;
+  color: #B79B4B;
+}
+.wrapper .main-container .act-list-button {
+  padding-left: 33px;
+  padding-right: 33px;
+}
+.wrapper .main-container a {
+  margin: 0.5rem 0.3rem 0 0.3rem;
+}
+@media (max-width: 510px) and (min-width: 350px) {
+  .wrapper .main-container a {
+    margin: 0.5rem 5rem 0.4rem 5rem;
+  }
+}
+@media (max-width: 349px) {
+  .wrapper .main-container a {
+    margin: 0.5rem 1rem 0.4rem 1rem;
+  }
+}
+
+/* End of main container */
+/* animated background */
+.row {
+  margin: 0;
+  width: 100%;
+  background: #797979;
+  height: 10vh;
+  animation: fade 5s infinite;
+  animation-direction: alternate;
+}
+
+.row-2 {
+  animation-delay: 0.5s;
+}
+
+.row-3 {
+  animation-delay: 1s;
+}
+
+.row-4 {
+  animation-delay: 1.5s;
+}
+
+.row-5 {
+  animation-delay: 2s;
+}
+
+.row-6 {
+  animation-delay: 2.5s;
+}
+
+.row-7 {
+  animation-delay: 3s;
+}
+
+.row-8 {
+  animation-delay: 3.5s;
+}
+
+.row-9 {
+  animation-delay: 4s;
+}
+
+.row-10 {
+  animation-delay: 4.5s;
+}
+
+@keyframes fade {
+  from {
+    background: #797979;
+  }
+  to {
+    background: #555555;
+  }
+}/*# sourceMappingURL=index.css.map */

@@ -5,4 +5,5 @@ from django.http import HttpResponse
 
 # Index view 
 def index(request):
-    return HttpResponse("Forn el batoul")
+    # Return html page for the user to choose between english and arabic
+    return render(request, "forn_el_batoul/index.html")
