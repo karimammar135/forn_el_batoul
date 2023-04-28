@@ -8,7 +8,7 @@
         <title>Forn el Batoul</title>
 
         <!-- icon -->
-        <link href="{% static 'forn_el_batoul/media/forn-logo.png/' %}" rel="icon">
+        <link href="{% static 'forn_el_batoul/media/forn-logo.png' %}" rel="icon">
 
         <!-- meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +32,7 @@
 
                 <div class="main-container">
                     <!-- Backery icon -->
-                    <img src="{% static 'forn_el_batoul/media/forn-logo.png/' %}">
+                    <img src="{% static 'forn_el_batoul/media/forn-logo.png' %}">
 
                     <!-- Greeting -->
                     <span class="welcome">Welcome to</span>
@@ -40,8 +40,8 @@
 
                     <!-- Language options -->
                     <!-- buttons -->
-                    <a href="#" class="btn option option-1">English</a>
-                    <a href="#" class="btn option act-list-button">عربي</a>
+                    <a href="{% url 'home' %}" id="english" class="btn option option-1">English</a>
+                    <a href="#" id="arabic" class="btn option act-list-button">عربي</a>
                 </div>
 
             </div>

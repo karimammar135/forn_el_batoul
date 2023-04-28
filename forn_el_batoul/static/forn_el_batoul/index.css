@@ -8,6 +8,7 @@ body {
 .wrapper {
   height: 90vh;
   width: 100vw;
+  min-height: 450px;
   /* flexbox */
   display: flex;
   justify-content: center;
@@ -43,6 +44,9 @@ body {
   text-align: center;
 }
 @media (max-width: 570px) {
+  .wrapper .main-container {
+    margin-bottom: 60px;
+  }
   .wrapper .main-container .header {
     font-size: 36px;
   }
@@ -99,6 +103,7 @@ body {
   height: 10vh;
   animation: fade 5s infinite;
   animation-direction: alternate;
+  min-height: 45px;
 }
 
 .row-2 {

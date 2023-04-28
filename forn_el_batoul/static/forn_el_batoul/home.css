@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+/* main container */
+.main-container {
+  width: 100%;
+  height: 100vh;
+  min-height: 620px;
+  background-image: url("/static/forn_el_batoul/media/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 8px 40px 0 30px;
+  /* flexbox */
+  display: flex;
+  flex-direction: column;
+}
+
+/* End of main container */
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  /* header */
+}
+.navbar .header {
+  /* flexbox */
+  display: flex;
+  flex-direction: column;
+}
+.navbar .header img {
+  align-self: start;
+  margin-left: 2px;
+}
+.navbar .header span {
+  font-weight: 700;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+  color: #303030;
+  cursor: pointer;
+}
+
+/* End of navbar */
+/* Bottom container */
+.bottom-container {
+  flex-grow: 1;
+  /* flexbox */
+  display: flex;
+  justify-content: space-between;
+  /* left container */
+  /* End of left container */
+  /* right container */
+  /* End of right container */
+}
+.bottom-container .left-container {
+  width: 52%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* search engine */
+  /* welcoming img */
+}
+.bottom-container .left-container .search-engine {
+  background-color: white;
+  height: 40px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  /* flexbox */
+  display: flex;
+}
+.bottom-container .left-container .search-engine .search-1 {
+  width: 95%;
+  display: flex;
+  align-items: center;
+}
+.bottom-container .left-container .search-engine .search-1 input {
+  width: 95%;
+  border: none;
+}
+.bottom-container .left-container .search-engine .search-1 input:focus {
+  outline: none;
+}
+.bottom-container .left-container .search-engine .search-1 input::-moz-placeholder {
+  font-size: 15px;
+  color: #A7A0A0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+.bottom-container .left-container .search-engine .search-1 input::placeholder {
+  font-size: 15px;
+  color: #A7A0A0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+.bottom-container .left-container .search-engine .search-1 img {
+  margin: 0 10px 0 10px;
+}
+.bottom-container .left-container .search-engine .search-2 {
+  display: flex;
+  align-items: center;
+}
+.bottom-container .left-container .search-engine .search-2 div {
+  width: 2px;
+  height: 28px;
+  background-color: #D9D9D9;
+}
+.bottom-container .left-container .search-engine .search-2 img {
+  align-self: center;
+  margin: 0 15px 0 15px;
+}
+.bottom-container .left-container .welcoming-img {
+  background-image: url("/static/forn_el_batoul/media/main-forn.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-grow: 1;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+.bottom-container .left-container .welcoming-img span {
+  display: inline-block;
+  color: #FFFBFB;
+  font-size: 70px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin: 45px 0 0 40px;
+  cursor: pointer;
+}
+.bottom-container .right-container {
+  width: 45%;
+  /* flexbox */
+  display: flex;
+  flex-direction: column;
+  /* category footer */
+  /* category image */
+  /* Manakesh */
+  /* End of manakesh */
+  /* Pizza */
+  /* Pastries */
+}
+.bottom-container .right-container .head {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: flex-end;
+}
+.bottom-container .right-container .head span {
+  margin-left: 20px;
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+}
+.bottom-container .right-container .head a {
+  text-decoration: none;
+  color: #990C0C;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 300px) {
+  .bottom-container .right-container .head span, .bottom-container .right-container .head a {
+    font-size: 18px;
+  }
+}
+.bottom-container .right-container .food-categories {
+  flex-grow: 1;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  /* flexbox */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.bottom-container .right-container .food-categories .category {
+  background-color: #ffffff;
+  flex-grow: 1;
+  min-width: 40%;
+  border-radius: 15px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+  transition: transform 0.6s;
+  /* flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.bottom-container .right-container .food-categories .category:hover {
+  transform: scale(1.04);
+}
+.bottom-container .right-container .category-footer {
+  height: 55px;
+  padding: 0 25px 0 25px;
+  /* flexbox */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom-container .right-container .category-footer div {
+  /* flexbox */
+  display: flex;
+  flex-direction: column;
+}
+.bottom-container .right-container .category-footer div .category-name {
+  color: #000000;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  width: 100px;
+}
+.bottom-container .right-container .category-footer div .details {
+  color: #5F5F5F;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.bottom-container .right-container .category-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-grow: 1;
+  border-radius: 15px 15px 0 0;
+}
+.bottom-container .right-container .manakesh {
+  margin: 0 15px 15px 0;
+}
+.bottom-container .right-container .pizza {
+  margin: 0 0 15px 0;
+}
+.bottom-container .right-container .pastries {
+  margin: 0 15px 0 0;
+}
+
+/* End of bottom container*/
+/* small screens */
+@media (max-width: 1200px) and (min-width: 600px) {
+  .main-container {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .bottom-container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .bottom-container .left-container {
+    width: 100%;
+    min-height: 520px;
+    height: 100%;
+  }
+  .bottom-container .right-container {
+    width: 100%;
+  }
+  .bottom-container .right-container .head {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .bottom-container .right-container .head span, .bottom-container .right-container .head a {
+    margin: 0;
+  }
+  .bottom-container .right-container .food-categories .manakesh, .bottom-container .right-container .food-categories .pizza, .bottom-container .right-container .food-categories .pastries, .bottom-container .right-container .food-categories .snacks {
+    margin: 0 0 20px 0;
+    min-height: 350px;
+  }
+  .bottom-container .right-container .food-categories .manakesh, .bottom-container .right-container .food-categories .pastries {
+    margin-right: 10px;
+  }
+  .bottom-container .right-container .food-categories .pizza, .bottom-container .right-container .food-categories .snacks {
+    margin-left: 10px;
+  }
+}
+@media (max-width: 899px) and (min-width: 600px) {
+  .bottom-container {
+    justify-content: flex-start;
+  }
+  .main-container {
+    min-height: 1255px;
+  }
+  .food-categories .category {
+    min-height: 250px;
+  }
+}
+@media (max-width: 599px) {
+  .bottom-container {
+    justify-content: flex-start;
+  }
+  .main-container {
+    min-height: 100vh;
+    padding: 8px 20px 0 20px;
+  }
+  .bottom-container {
+    flex-direction: column;
+  }
+  .bottom-container .left-container {
+    width: 100%;
+  }
+  .bottom-container .left-container .welcoming-img {
+    display: flex;
+    align-items: center;
+  }
+  .bottom-container .left-container .welcoming-img span {
+    margin: 0 0 0 25px;
+    font-size: 32px;
+  }
+  .bottom-container .right-container {
+    width: 100%;
+  }
+  .bottom-container .right-container .head {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .bottom-container .right-container .head span, .bottom-container .right-container .head a {
+    margin: 0;
+  }
+  .bottom-container .right-container .food-categories .manakesh, .bottom-container .right-container .food-categories .pizza, .bottom-container .right-container .food-categories .pastries, .bottom-container .right-container .food-categories .snacks {
+    margin: 0 0 20px 0;
+  }
+  .bottom-container .right-container .food-categories .category {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    min-height: 80px;
+  }
+  .bottom-container .right-container .food-categories .category .category-footer {
+    width: 75%;
+    height: 100%;
+  }
+  .bottom-container .right-container .food-categories .category .category-img {
+    border-radius: 15px 0 0 15px;
+    height: 100%;
+    min-width: 80px;
+  }
+  .dropbtn {
+    height: 22px;
+    width: auto;
+  }
+}
+@media (max-width: 599px) and (min-width: 500px) {
+  .main-container {
+    height: 950px;
+  }
+  .left-container {
+    width: 100%;
+    height: 100%;
+  }
+  .left-container .welcoming-img span {
+    font-size: 32px;
+  }
+}
+@media (max-width: 499px) {
+  .right-container .food-categories .category-footer {
+    padding: 0 15px 0 15px;
+  }
+  .main-container {
+    height: 845px;
+  }
+  .left-container {
+    width: 100%;
+    height: 100%;
+  }
+  .left-container .welcoming-img span {
+    font-size: 50px;
+  }
+}
+/* End of small screens */
+/* dropdown */
+.dropbtn {
+  color: #5F5F5F;
+  font-size: 2.1rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  color: #990C0C;
+}
+
+.dropdown {
+  margin-top: 0.1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #990C0C;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}/*# sourceMappingURL=home.css.map */
