@@ -41,6 +41,11 @@
             cursor: pointer;
         }
     }
+
+    /* dropdown */
+    i {
+        font-size: 41px;
+    }
 }
 /* End of navbar */
 
@@ -88,8 +93,9 @@
                     font-family: 'Poppins', sans-serif;
                     font-weight: 400;
                 }
-                img {
+                i {
                     margin: 0 10px 0 10px;
+                    color: #c0c0c0;
                 }
             }
             .search-2 {
@@ -100,11 +106,19 @@
                     height: 28px;
                     background-color:  #D9D9D9;
                 }
-                img{
+                i{
                     align-self: center;
                     margin: 0 15px 0 15px;
+                    color: #c0c0c0;
                 }
             }
+        }
+        // End of search engine
+
+        // When focusing on the input outline the whole search engine
+        .search-engine:focus-within {
+            outline: thin solid rgb(153, 12, 12, 0.3);
+            box-shadow: 0px 4px 4px rgb(153, 12, 12, 0.3);
         }
 
         /* welcoming img */
@@ -153,6 +167,7 @@
                 cursor: pointer;
             }
             a {
+                position: relative;
                 text-decoration: none;
                 color: #990C0C;
                 font-family: 'Poppins', sans-serif;
@@ -160,6 +175,24 @@
                 font-size: 20px;
                 margin-right: 20px;
             }
+            /* underline hover effect */
+            a::after {
+                content: '';
+                position: absolute;
+                width: 98%;
+                height: 2px;
+                bottom: 0;
+                right: 0;
+                background-color: #990C0C;
+                transform-origin: bottom right;
+                transition: transform 0.3s ease-out;
+                transform: scaleX(0);
+            }
+            a:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+
             @media (max-width: 300px){
                 span, a{
                     font-size: 18px;
@@ -224,6 +257,11 @@
                     font-family: 'Poppins', sans-serif;
                     font-weight: 500;
                 }
+                
+            }
+            i {
+                font-size: 25px;
+                color: #AEACAC;
             }
         }
 
@@ -258,9 +296,6 @@
 
 /* small screens */
 @media (max-width: 1200px) and (min-width: 600px){
-    .main-container {
-        height: fit-content;
-    }
     .bottom-container {
         flex-direction: column;
         justify-content: flex-start;
@@ -281,7 +316,6 @@
                 
                 .manakesh, .pizza, .pastries, .snacks{
                     margin: 0 0 20px 0;
-                    min-height: 350px;
                 }
                 .manakesh, .pastries {
                     margin-right: 10px;
@@ -294,10 +328,18 @@
     }
 }
 
-@media (max-width: 899px) and (min-width: 600px){
-    .bottom-container {
-        justify-content: flex-start;
+@media (max-width: 1200px) and (min-width: 900px){
+    .main-container {
+        height: fit-content;
     }
+    .food-categories {      
+        .category{
+            min-height: 350px;
+        }
+    }
+}
+
+@media (max-width: 899px) and (min-width: 600px){
     .main-container {
         min-height: 1255px;
     }
@@ -359,14 +401,14 @@
             }
         }
     }
-
-    .dropbtn {
-        height: 22px;
-        width: auto;
-    }
 }
 
 @media (max-width: 599px) and (min-width: 500px){
+    .navbar{
+        i {
+            font-size: 30px;
+        }
+    }
     .main-container{
         height: 950px;
     }
@@ -381,6 +423,11 @@
     }
 }
 @media (max-width: 499px){
+    .navbar{
+        i {
+            font-size: 30px;
+        }
+    }
     .right-container {
         .food-categories {
             .category-footer {
@@ -407,6 +454,10 @@
 /* End of small screens */
 
 /* dropdown */
+#dropbtn_open {
+    color:#990C0C;
+}
+
 .dropbtn {
     color: #5F5F5F;
     font-size: 2.1rem;

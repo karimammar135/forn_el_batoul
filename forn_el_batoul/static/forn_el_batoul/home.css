@@ -19,6 +19,7 @@
   display: flex;
   justify-content: space-between;
   /* header */
+  /* dropdown */
 }
 .navbar .header {
   /* flexbox */
@@ -35,6 +36,9 @@
   font-family: "Poppins", sans-serif;
   color: #303030;
   cursor: pointer;
+}
+.navbar i {
+  font-size: 41px;
 }
 
 /* End of navbar */
@@ -90,8 +94,9 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
-.bottom-container .left-container .search-engine .search-1 img {
+.bottom-container .left-container .search-engine .search-1 i {
   margin: 0 10px 0 10px;
+  color: #c0c0c0;
 }
 .bottom-container .left-container .search-engine .search-2 {
   display: flex;
@@ -102,9 +107,14 @@
   height: 28px;
   background-color: #D9D9D9;
 }
-.bottom-container .left-container .search-engine .search-2 img {
+.bottom-container .left-container .search-engine .search-2 i {
   align-self: center;
   margin: 0 15px 0 15px;
+  color: #c0c0c0;
+}
+.bottom-container .left-container .search-engine:focus-within {
+  outline: thin solid rgba(153, 12, 12, 0.3);
+  box-shadow: 0px 4px 4px rgba(153, 12, 12, 0.3);
 }
 .bottom-container .left-container .welcoming-img {
   background-image: url("/static/forn_el_batoul/media/main-forn.jpeg");
@@ -142,6 +152,7 @@
   justify-content: space-between;
   height: 50px;
   align-items: flex-end;
+  /* underline hover effect */
 }
 .bottom-container .right-container .head span {
   margin-left: 20px;
@@ -152,12 +163,29 @@
   cursor: pointer;
 }
 .bottom-container .right-container .head a {
+  position: relative;
   text-decoration: none;
   color: #990C0C;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 20px;
   margin-right: 20px;
+}
+.bottom-container .right-container .head a::after {
+  content: "";
+  position: absolute;
+  width: 98%;
+  height: 2px;
+  bottom: 0;
+  right: 0;
+  background-color: #990C0C;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+  transform: scaleX(0);
+}
+.bottom-container .right-container .head a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 @media (max-width: 300px) {
   .bottom-container .right-container .head span, .bottom-container .right-container .head a {
@@ -215,6 +243,10 @@
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
+.bottom-container .right-container .category-footer i {
+  font-size: 25px;
+  color: #AEACAC;
+}
 .bottom-container .right-container .category-img {
   background-size: cover;
   background-position: center;
@@ -235,10 +267,6 @@
 /* End of bottom container*/
 /* small screens */
 @media (max-width: 1200px) and (min-width: 600px) {
-  .main-container {
-    height: -moz-fit-content;
-    height: fit-content;
-  }
   .bottom-container {
     flex-direction: column;
     justify-content: flex-start;
@@ -260,7 +288,6 @@
   }
   .bottom-container .right-container .food-categories .manakesh, .bottom-container .right-container .food-categories .pizza, .bottom-container .right-container .food-categories .pastries, .bottom-container .right-container .food-categories .snacks {
     margin: 0 0 20px 0;
-    min-height: 350px;
   }
   .bottom-container .right-container .food-categories .manakesh, .bottom-container .right-container .food-categories .pastries {
     margin-right: 10px;
@@ -269,10 +296,16 @@
     margin-left: 10px;
   }
 }
-@media (max-width: 899px) and (min-width: 600px) {
-  .bottom-container {
-    justify-content: flex-start;
+@media (max-width: 1200px) and (min-width: 900px) {
+  .main-container {
+    height: -moz-fit-content;
+    height: fit-content;
   }
+  .food-categories .category {
+    min-height: 350px;
+  }
+}
+@media (max-width: 899px) and (min-width: 600px) {
   .main-container {
     min-height: 1255px;
   }
@@ -330,12 +363,11 @@
     height: 100%;
     min-width: 80px;
   }
-  .dropbtn {
-    height: 22px;
-    width: auto;
-  }
 }
 @media (max-width: 599px) and (min-width: 500px) {
+  .navbar i {
+    font-size: 30px;
+  }
   .main-container {
     height: 950px;
   }
@@ -348,6 +380,9 @@
   }
 }
 @media (max-width: 499px) {
+  .navbar i {
+    font-size: 30px;
+  }
   .right-container .food-categories .category-footer {
     padding: 0 15px 0 15px;
   }
@@ -364,6 +399,10 @@
 }
 /* End of small screens */
 /* dropdown */
+#dropbtn_open {
+  color: #990C0C;
+}
+
 .dropbtn {
   color: #5F5F5F;
   font-size: 2.1rem;

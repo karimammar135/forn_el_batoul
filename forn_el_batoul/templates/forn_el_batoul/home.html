@@ -26,6 +26,8 @@
             toggle between hiding and showing the dropdown content */
             function dropdown() {
               document.getElementById("myDropdown").classList.toggle("show");
+              document.querySelector("#dropbtn").style.display = 'none';
+              document.querySelector("#dropbtn_open").style.display = 'block';
             }
             
             // Close the dropdown if the user clicks outside of it
@@ -37,11 +39,15 @@
                   var openDropdown = dropdowns[i];
                   if (openDropdown.classList.contains('show')) {
                     openDropdown.classList.remove('show');
+                    document.querySelector("#dropbtn").style.display = 'block';
+                    document.querySelector("#dropbtn_open").style.display = 'none';
                   }
                 }
               }
             }
         </script>
+
+        <script type="text/javascript" src="{% static 'forn_el_batoul/home.js' %}"></script>
 
     </head>
     <body>
@@ -62,11 +68,15 @@
                 
                 <!-- dropdown -->
                 <div class="dropdown">
-                    <img src="{% static 'forn_el_batoul/media/dropdown.png' %}" onclick="dropdown()" class="dropbtn">
-                   
+                    <i class="fa-solid fa-bars dropbtn" onclick="dropdown()" id="dropbtn"></i>
+                    <i class="fa-solid fa-bars-staggered dropbtn" style="display: none;" id="dropbtn_open"></i>
+
                     <div id="myDropdown" class="dropdown-content">
-                        <a href="{% url 'home' %}">Contact us</a>
-                        <a href="{% url 'home' %}">Delivery</a>
+                        <a href="#">Contact us</a>
+                        <a href="#">Delivery</a>
+                        <a href="#">Location</a>
+                        <a href="#">Working hours</a>
+                        <a href="#">Menu</a>
                     </div>
                 </div>
 
@@ -82,12 +92,12 @@
                 <!-- Serach engine -->
                 <div class="search-engine">
                   <div class="search-1">
-                    <img src="{% static 'forn_el_batoul/media/search-icon.png' %}" alt="search-icon">
-                    <input placeholder="Search">
+                    <i class="fa-solid fa-magnifying-glass-arrow-right" id="search_icon"></i>
+                    <input placeholder="Search Food">
                   </div>
                   <div class="search-2">
                     <div></div>
-                    <img src="{% static 'forn_el_batoul/media/arrow.png' %}">
+                    <i class="fa-solid fa-chevron-down"></i>
                   </div>
                 </div>
                 <!-- End of serach engine -->
@@ -130,7 +140,7 @@
                             <span class="category-name">{{ category.title }}</span>
                             <span class="details">12 menu</span>
                           </div>
-                          <img src="{% static 'forn_el_batoul/media/arrow_2.png' %}" alt="arrow">
+                          <i class="fa-solid fa-chevron-right"></i>
                         </div>
                         <!-- End of footer -->
 
