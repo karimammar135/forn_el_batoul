@@ -19,6 +19,9 @@
         <!-- stylesheet -->
         <link href="{% static 'forn_el_batoul/home.css' %}" rel="stylesheet">
 
+        <!-- website footer stylesheet -->
+        <link href="{% static 'forn_el_batoul/website-footer.css' %}" rel="stylesheet">
+
         <script src="https://kit.fontawesome.com/a122ebbd90.js" crossorigin="anonymous"></script>
 
         <script>
@@ -32,6 +35,22 @@
             
             // Close the dropdown if the user clicks outside of it
             window.onclick = function(event) {
+              if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                    document.querySelector("#dropbtn").style.display = 'block';
+                    document.querySelector("#dropbtn_open").style.display = 'none';
+                  }
+                }
+              }
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.ontouchend = function(event) {
               if (!event.target.matches('.dropbtn')) {
                 var dropdowns = document.getElementsByClassName("dropdown-content");
                 var i;
@@ -153,6 +172,50 @@
               </div>
             </div>
         </div>
+        <!-- End Main container -->
+
+        <!-- Website footer -->
+        <div id="website-footer">
+
+          <!-- logo -->
+          <div class="logo-footer">
+              <img src="{% static 'forn_el_batoul/media/oven-icon.png' %}" rel="icon" id="oven-icon">
+              <span class="line"></span>
+              <span id="title" style="color: white;">Forn eL Batoul</span>
+          </div>
+
+          <!-- links -->
+          <div class="links">
+              <div class="links-1">
+                  <a href="/#">Home</a>
+                  <a href="#">Working hours</a>
+                  <a href="#" class="c-a-n-l">Food Categories</a>
+                  <a href="#">Report a bug</a>
+                  <a href="#">Location</a>
+              </div>
+              <span class="footer-line"></span>
+              <div class="links-2">
+                  <a href="#">Log In</a>
+                  <a href="#">Register</a>
+                  <a href="#">Terms of service</a>
+                  <a href="#">Discover Menu</a>
+                  <a href="#">Contact us</a>
+              </div>
+          </div>
+
+          <!-- designed by -->
+          <span class="designed-by">This website is designed and developed by MegaWeb</span>
+
+          <!-- phone number -->
+          <div class="phone-number">
+              <span style="color: white; font-family: 'Inter', sans-serif; margin-right: 7px;">Number:</span>
+              <a href="#">71 008 125</a>
+              <span class="slash" style="color: white;">/</span>
+              <a href="#">03 295 872</a>
+          </div>
+          <a id="mega-web" href="#">MegaWeb Software</a>
+        </div>
+        <!-- End of website footer -->
 
     </body>
 </html>

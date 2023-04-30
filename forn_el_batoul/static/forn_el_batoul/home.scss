@@ -117,7 +117,7 @@
 
         // When focusing on the input outline the whole search engine
         .search-engine:focus-within {
-            outline: thin solid rgb(153, 12, 12, 0.3);
+            border: thin solid rgb(153, 12, 12, 0.3);
             box-shadow: 0px 4px 4px rgb(153, 12, 12, 0.3);
         }
 
@@ -497,3 +497,4 @@
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
