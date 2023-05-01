@@ -24,6 +24,9 @@
 
         <script src="https://kit.fontawesome.com/a122ebbd90.js" crossorigin="anonymous"></script>
 
+        <!-- Change Language javascript file -->
+        <script src="{% static 'forn_el_batoul/language.js' %}"></script>
+
         <script>
             /* When the user clicks on the button, 
             toggle between hiding and showing the dropdown content */
@@ -70,6 +73,8 @@
 
     </head>
     <body>
+        <!-- Identifying which page -->
+        <input type="hidden" name="page" value="home">
 
         <!-- Main container -->
         <div class="main-container">
@@ -82,7 +87,7 @@
                     <img src="{% static 'forn_el_batoul/media/oven-icon.png' %}" alt="oven-icon">
 
                     <!-- forn el baoul greeting -->
-                    <span>Forn el Batoul</span>
+                    <span id="heading_title">Forn el Batoul</span>
                 </div>
                 
                 <!-- dropdown -->
@@ -91,11 +96,11 @@
                     <i class="fa-solid fa-bars-staggered dropbtn" style="display: none;" id="dropbtn_open"></i>
 
                     <div id="myDropdown" class="dropdown-content">
-                        <a href="#">Contact us</a>
-                        <a href="#">Delivery</a>
-                        <a href="#">Location</a>
-                        <a href="#">Working hours</a>
-                        <a href="#">Menu</a>
+                        <a class="drop_1" href="#">Contact us</a>
+                        <a class="drop_2" href="#">Delivery</a>
+                        <a class="drop_3" href="#">Location</a>
+                        <a class="drop_4" href="#">Working hours</a>
+                        <a class="drop_5" href="#">Menu</a>
                     </div>
                 </div>
 
@@ -123,7 +128,7 @@
 
                 <!-- welcoming img -->
                 <div class="welcoming-img">
-                  <span>Sales of <br> Today</span>
+                  <span id="img_text">Sales of <br> Today</span>
                 </div>
               </div>
 
@@ -131,8 +136,8 @@
               <div class="right-container">
                 <!-- Head -->
                 <div class="head">
-                  <span>Food Categories</span>
-                  <a href="#">View All</a>
+                  <span id="food_categories_title">Food Categories</span>
+                  <a id="view_all" href="#">View All</a>
                 </div>
 
                 <!-- food categories -->

@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alexandria&display=swap");
+/* arabic language font */
+.arabic-font {
+  font-family: "Alexandria", sans-serif;
+}
+
+.english-font {
+  font-family: "Poppins", sans-serif;
+}
+
 /* main container */
 .main-container {
   width: 100%;
@@ -33,7 +43,6 @@
 .navbar .header span {
   font-weight: 700;
   font-size: 24px;
-  font-family: "Poppins", sans-serif;
   color: #303030;
   cursor: pointer;
 }
@@ -85,13 +94,11 @@
 .bottom-container .left-container .search-engine .search-1 input::-moz-placeholder {
   font-size: 15px;
   color: #A7A0A0;
-  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 .bottom-container .left-container .search-engine .search-1 input::placeholder {
   font-size: 15px;
   color: #A7A0A0;
-  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 .bottom-container .left-container .search-engine .search-1 i {
@@ -130,7 +137,6 @@
   display: inline-block;
   color: #FFFBFB;
   font-size: 70px;
-  font-family: "Poppins", sans-serif;
   font-weight: 700;
   margin: 45px 0 0 40px;
   cursor: pointer;
@@ -157,7 +163,6 @@
 .bottom-container .right-container .head span {
   margin-left: 20px;
   color: #000000;
-  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 20px;
   cursor: pointer;
@@ -166,7 +171,6 @@
   position: relative;
   text-decoration: none;
   color: #990C0C;
-  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 20px;
   margin-right: 20px;
@@ -234,7 +238,6 @@
   color: #000000;
   font-weight: 500;
   font-size: 18px;
-  font-family: "Poppins", sans-serif;
   width: 100px;
 }
 .bottom-container .right-container .category-footer div .details {

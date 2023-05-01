@@ -34,7 +34,7 @@
     width: 45px;
   }
   #website-footer .logo-footer .line {
-    height: 1.3rem;
+    height: 33px;
   }
   #website-footer .logo-footer #title {
     font-size: 25px;
@@ -43,7 +43,7 @@
 #website-footer #mega-web {
   color: #B79B4B;
   text-decoration: underline;
-  margin-top: 15px;
+  margin-top: 30px;
 }
 #website-footer .links {
   display: flex;
@@ -75,7 +75,7 @@
 }
 #website-footer .footer-line {
   height: 100%;
-  width: 0.2px;
+  width: 1px;
   border: none;
   background-color: black;
   margin: 4px 10px 0 10px;
@@ -85,11 +85,6 @@
   color: white;
   font-family: "Inter", sans-serif;
   text-align: center;
-}
-#website-footer .email {
-  color: white;
-  font-family: "Inter", sans-serif;
-  margin-bottom: 5px;
 }
 #website-footer .phone-number {
   display: flex;
@@ -117,10 +112,6 @@
     margin-top: 2rem;
     margin-bottom: 5px;
   }
-  #website-footer .email {
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
   #website-footer .links {
     margin-left: 5px;
     margin-right: 5px;
@@ -134,19 +125,12 @@
     margin-top: 2.3rem;
     margin-bottom: 8px;
   }
-  #website-footer .email {
-    margin-top: 10px;
-    margin-bottom: 15px;
-  }
 }
 @media (max-width: 285px) {
   #website-footer {
     height: 505px;
   }
   #website-footer .designed-by {
-    font-size: 12px;
-  }
-  #website-footer .email {
     font-size: 12px;
   }
   #website-footer .phone-number {
@@ -159,9 +143,6 @@
 }
 @media (max-width: 400px) {
   #website-footer .designed-by {
-    font-size: 14px;
-  }
-  #website-footer .email {
     font-size: 14px;
   }
   #website-footer .phone-number {
