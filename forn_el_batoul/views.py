@@ -39,3 +39,8 @@ def home(request):
     return render(request, "forn_el_batoul/home.html", {
         "food_categories": food_categories
     })
+
+def main_menu(request):
+    
+    # Return main menu html page
+    return render(request, "forn_el_batoul/main_menu.html")

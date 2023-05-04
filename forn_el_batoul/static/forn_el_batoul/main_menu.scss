@@ -1,0 +1,59 @@
+
+// Main container
+#main_menu_container {
+    // container size
+    width: 100%;
+    height: 90vh;
+
+    // background
+    background-image: url('/static/forn_el_batoul/media/forn_background_large.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+// image slider
+.img_slider {
+    // Size
+    padding-top: 33%;
+    width: 100%;
+    position: relative;
+    
+    @media (max-width: 499px) {
+        padding-top: 79%;
+    }
+
+    // Image
+    background-image: url('/static/forn_el_batoul/media/main-forn.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    // Styles
+    border-radius: 0 0 24px 24px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+    // Top
+    .slider_top {
+        // position
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        // Flexbox
+        display: flex;
+        justify-content: space-between;
+        
+        img{
+            margin-top: 20px;
+        }
+    }
+
+    // Bottom
+    .slider_bottom {
+        // flexbox
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -1,0 +1,33 @@
+{% extends 'forn_el_batoul/layout.html' %}
+
+{% load static %}
+
+{% block title %}Menu{% endblock %}
+
+{% block head %}
+    <!-- Stylesheet -->
+    <link href="{% static 'forn_el_batoul/main_menu.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block body %}
+    <!-- main menu conatiner -->
+    <div id="main_menu_container">
+        <!-- image slider -->
+        <div class="img_slider">
+            <!-- Top -->
+            <div class="slider_top">
+                <img src="{% static 'forn_el_batoul/media/Back.png' %}" rel="icon">
+                <span>details</span>
+            </div>
+
+            <!-- Bottom -->
+            <div class="slider_bottom">
+                <span>sliding dots</span>
+            </div>
+        </div>
+        <!-- End of image slider -->
+
+    </div>
+    <!-- End of main container -->
+{% endblock %}
