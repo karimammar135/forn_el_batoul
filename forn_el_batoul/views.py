@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Choice, FoodCategory
 
 # Create your views here.
 
@@ -41,6 +42,14 @@ def home(request):
     })
 
 def main_menu(request):
-    
+    # Get menu choices from the database
+    manakish = FoodCategory.objects.get(category_name="Manakish").choices.all()
+    pizza = FoodCategory.objects.get(category_name="Pizza").choices.all()
+    pastries = FoodCategory.objects.get(category_name="Pastries").choices.all()
+
     # Return main menu html page
-    return render(request, "forn_el_batoul/main_menu.html")
+    return render(request, "forn_el_batoul/main_menu.html", {
+        "manakish": manakish,
+        "pizza": pizza,
+        "pastries": pastries
+    })

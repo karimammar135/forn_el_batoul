@@ -8,25 +8,216 @@
     <!-- Stylesheet -->
     <link href="{% static 'forn_el_batoul/main_menu.css' %}" rel="stylesheet">
 
+    <script src="{% static 'forn_el_batoul/main_menu.js' %}"></script>
+
 {% endblock %}
 
 {% block body %}
     <!-- main menu conatiner -->
     <div id="main_menu_container">
         <!-- image slider -->
-        <div class="img_slider">
+        <div class="slideshow-container">
+
             <!-- Top -->
             <div class="slider_top">
-                <img src="{% static 'forn_el_batoul/media/Back.png' %}" rel="icon">
-                <span>details</span>
+                <a href="{% url 'home' %}"><img src="{% static 'forn_el_batoul/media/Back.png' %}" rel="icon"></a>
+                <a href="#"><img src="{% static 'forn_el_batoul/media/More.png' %}" rel="icon"></a>
             </div>
 
             <!-- Bottom -->
             <div class="slider_bottom">
-                <span>sliding dots</span>
+                <div class="wrapper dot-0" onclick="currentSlide(0)"><span class="dot"></span></div>
+                <div class="wrapper dot-1" onclick="currentSlide(1)"><span class="dot"></span></div>
+                <div class="wrapper dot-2" onclick="currentSlide(2)"><span class="dot"></span></div>
+                <div class="wrapper dot-3" onclick="currentSlide(3)"><span class="dot"></span></div>
+                <div class="wrapper dot-4" onclick="currentSlide(4)"><span class="dot"></span></div>
             </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
         </div>
-        <!-- End of image slider -->
+        <!-- End of slide show container -->
+
+        <!-- main container -->
+        <div class="top_container">
+            <!-- head -->
+            <div id="head">
+                <div class="rating">
+                    <img src="{% static 'forn_el_batoul/media/star.png' %}" rel="icon">
+                    <span>4.7</span>
+                </div>
+                <div class="shipping">
+                    <img src="{% static 'forn_el_batoul/media/Delivery.png' %}" rel="icon">
+                    <span>3$</span>
+                </div>
+                <div class="time">
+                    <i class="fa-regular fa-clock"></i>
+                    <span>20 min</span>
+                </div>
+            </div>
+            <!-- End of head -->
+
+            <!-- forn el batoul greeting -->
+            <span class="greeting">Forn El Batoul Menu</span>
+            <p class="description"  id="manakish">Our products are always made fresh to order and served hot and delicious. Experience the taste of our unique products!</p>
+
+        </div>
+        <!-- End of main container -->
+
+        <!-- scrolling cards -->
+        <div class="scrolling-wrapper">
+            <a href="#manakish" class="card" style="margin-left: 24px;"><span>Manakish</span></a>
+            <a href="#pizza" class="card"><span>Pizza</span></a>
+            <a href="#pastries" class="card"><span>Pastries</span></a>
+            <a href="#snacks" class="card"><span>Snacks</span></a>
+            <a href="#" class="card"><span>Cold Drinks</span></a>
+        </div>
+        <!-- End of scrolling cards -->
+
+        <!-- Manakish -->
+        <div class="category">
+
+            <!-- header-->
+            <div class="header">
+                <!-- Tite -->
+                <span class="title">Manakish</span>
+                <span class="price_heading">Price</span>
+            </div>
+
+            <!-- menu choices -->
+            {% for choice in manakish %}
+                <div class="choice">
+                    <div>
+                        {% if choice.description == "" %}
+                            <span class="choice_name" style="margin-top: 5px; margin-bottom: 5px;">{{ choice.choice }}</span>
+                        {% else %}
+                            <span class="choice_name" style="padding-top: 6px;">{{ choice.choice }}</span>
+                            <span class="choice_description">{{ choice.description }}</span>
+                        {% endif %}
+                    </div>
+                    <span class="choice_price">{{ choice.price }},000 LBP</span>
+                </div>
+            {% endfor %}
+            <div id="pizza"></div>
+            <div class="choice">
+                <div>
+                    <span class="choice_name" style="margin-top: 5px; margin-bottom: 5px;">Cheese</span>
+                </div>
+                <span class="choice_price">200,000 LBP</span>
+            </div>
+            <!-- End of menu choices -->
+            
+        </div>
+        <!-- End of manakish -->
+
+        <!-- Pizza -->
+        <div class="category">
+
+            <!-- header-->
+            <div class="header">
+                <!-- Tite -->
+                <span class="title">Pizza</span>
+                <div style="display: flex;">
+                    <span class="price small_screen" style="margin-right: 5px;">Price:</span>
+                    <span class="price small_screen pizza_price">200,000 LBP</span>
+                </div>
+                
+            </div>
+
+            <!-- sizes -->
+            <div class="header_2">
+                <div class="sizes">
+                    <span>Sizes:</span>
+                    <button onclick="pizza_price('small')">Small</button>
+                    <button onclick="pizza_price('medium')">Medium</button>
+                    <button onclick="pizza_price('large')">Large</button>
+                </div>
+                <div style="display: flex;">
+                    <span class="price large_screen" style="margin-right: 5px;">Price: </span>
+                    <span class="price large_screen pizza_price">200,000 LBP</span>
+                </div>
+            </div>
+            
+            <!-- menu choices -->
+            {% for choice in pizza %}
+                <div class="choice">
+                    <div>
+                        {% if choice.description == "" %}
+                            <span class="choice_name" style="margin-top: 5px; margin-bottom: 5px;">{{ choice.choice }}</span>
+                        {% else %}
+                            <span class="choice_name" style="padding-top: 6px;">{{ choice.choice }}</span>
+                            <span class="choice_description">{{ choice.description }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+            <div id="pastries"></div>
+            <div class="choice">
+                <div>
+                    <span class="choice_name" style="margin-top: 5px; margin-bottom: 5px;">Pizza with vegetables</span>
+                </div>
+                <span class="choice_price">200,000 LBP</span>
+            </div>
+            <!-- End of menu choices -->
+            
+        </div>
+        <!-- End of pizza -->
+
+        <!-- Pastries -->
+        <div class="category">
+
+            <!-- header-->
+            <div class="header">
+                <!-- Tite -->
+                <span class="title">Pastries</span>
+                <span class="price_heading">Price</span>
+            </div>
+            
+            <!-- menu choices -->
+            {% for choice in pastries %}
+                <div class="choice">
+                    <div>
+                        {% if choice.description == "" %}
+                            <span class="choice_name" style="margin-top: 5px; margin-bottom: 5px;">{{ choice.choice }}</span>
+                        {% else %}
+                            <span class="choice_name" style="padding-top: 6px;">{{ choice.choice }}</span>
+                            <span class="choice_description">{{ choice.description }}</span>
+                        {% endif %}
+                    </div>
+                    <span class="choice_price">{{ choice.price }},000 LBP</span>
+                </div>
+            {% endfor %}
+            <div id="snacks"></div>
+            <div class="choice">
+                <div>
+                    <span class="choice_name" style="margin-top: 5px; margin-bottom: 5px;">Cheese</span>
+                </div>
+                <span class="choice_price">200,000 LBP</span>
+            </div>
+            <!-- End of menu choices -->
+
+        </div>
+        <!-- End of pastries -->
+
+        <!-- Snacks -->
+        <div class="category" style="padding-bottom: 50px;">
+
+            <!-- header-->
+            <div class="header">
+                <!-- Tite -->
+                <span class="title">Snacks</span>
+            </div>
+            
+            <!-- Coming soon -->
+            <div class="choice" style="justify-content: center;">
+                <div>
+                    <span class="choice_name" style="color: #B79B4B; margin: 5px 0 5px 0;">Coming Soon!</span> 
+                </div>
+            </div>
+
+        </div>
+        <!-- End of snacks -->
 
     </div>
     <!-- End of main container -->

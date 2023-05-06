@@ -1,9 +1,12 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap');
+
 // Main container
 #main_menu_container {
     // container size
     width: 100%;
-    height: 90vh;
+    height: fit-content;
+    min-height: 280px;
 
     // background
     background-image: url('/static/forn_el_batoul/media/forn_background_large.png');
@@ -12,19 +15,22 @@
 
 }
 
-// image slider
-.img_slider {
+// Slide show container
+.slideshow-container {
     // Size
-    padding-top: 33%;
+    padding-top: clamp(30vh, 33%, 56vh);
     width: 100%;
     position: relative;
+    opacity: 1;
     
     @media (max-width: 499px) {
-        padding-top: 79%;
+        padding-top: clamp(30vh, 79%, 55vh);
+    }
+    @media (max-height: 280px) {
+        padding-top: 185px;
     }
 
     // Image
-    background-image: url('/static/forn_el_batoul/media/main-forn.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -33,19 +39,24 @@
     border-radius: 0 0 24px 24px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
+    opacity: .6;
+    transition: opacity 1.5s;
+
     // Top
     .slider_top {
         // position
         position: absolute;
         top: 0;
         width: 100%;
+        padding: 30px 15px 0 15px;
 
         // Flexbox
         display: flex;
         justify-content: space-between;
         
         img{
-            margin-top: 20px;
+            height: 45px;
+            cursor: pointer;
         }
     }
 
@@ -55,5 +66,438 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-bottom: 10px;
+    }
+
+    // Slides
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        text-decoration: none;
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 10px;
+        width: 10px;
+        background: rgba(255, 255, 255, 0.41);
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+    .wrapper {
+        height: 20px;
+        width: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .wrapper_a::after {
+        display: block;
+        content: '';
+        border: 1.5px solid #ffffff;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        top: 0;
+    }
+
+    .active, .dot:hover {
+        background-color: #ffffff;
+    }
+    
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+        .prev, .next{font-size: 11px}
+    }
+
+}
+/* end of slide show container */
+
+/* slide show backgrounds */
+.background-0 {
+    background-image: url('/static/forn_el_batoul/media/main-forn.jpeg');
+}
+.background-1 {
+    background-image: url('/static/forn_el_batoul/media/snacks.jpg');
+}
+.background-2 {
+    background-image: url('/static/forn_el_batoul/media/pastries.jpeg');
+}
+.background-3 {
+    background-image: url('/static/forn_el_batoul/media/pizza.jpeg');
+}
+.background-4 {
+    background-image: url('/static/forn_el_batoul/media/manakesh.jpeg');
+}
+
+
+/* main container */
+.top_container {
+    margin-left: 24px;
+}
+
+/* Head */
+#head {
+    width: 100%;
+    margin-top: 25px;
+
+    /* flexbox */
+    display: flex;
+
+    .rating, .shipping, .time {
+        /* flexbox */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rating {
+        margin-right: 37px;
+        span {
+            font-size: 16px;
+            color: #181C2E;
+            font-weight: 700;
+            font-family: 'Sen', sans-serif;
+            margin-top: 2px;
+        }
+        img{
+            margin-right: 10px;
+        }
+    }
+    .shipping, .time {
+        span {
+            font-size: 14px;
+            color: #181C2E;
+            font-weight: 400;
+            font-family: 'Sen', sans-serif;
+            margin-top: 2px;
+        }
+    }
+    .shipping {
+        margin-right: 37px;
+        img{
+            margin-right: 10px;
+        }
+    }
+    .time {
+        i{
+            margin-right: 10px;
+            color: #990C0C;
+            font-size: 23px;
+        }
+    }
+
+    @media (max-width: 300px){
+        .rating, .shipping {
+            margin-right: 27px;
+        }
     }
 }
+/* End of head */
+
+/* Fron el betoul Greeting */
+.greeting {
+    font-size: 20px;
+    color: #181C2E;
+    font-weight: 700;
+    font-family: 'Sen', sans-serif;
+    margin: 10px 0 7px 0;
+    display: block;
+}
+.description {
+    color: #292C37;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Sen', sans-serif;
+    margin-right: 24px;
+    margin-bottom: 5px;
+}
+
+/* scrolling cards */
+.scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    padding-bottom: 10px;
+    top: 0;
+    top: -1px;
+    transition: background-color 1s;
+  
+    .card {
+      flex: 0 0 auto;
+      height: 45px;
+      background-color: transparent;
+      border: 2px solid #181C2E;
+      border-radius: 33px;
+      min-width: fit-content;
+      margin-right: 10px;
+      transition: border-color 1s, background-color 1s;
+      text-decoration: none;
+      margin-top: 15px;
+      
+
+      /* flexbox */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        color: #181C2E;
+        font-weight: 400;
+        font-family: 'Sen', sans-serif;
+        font-size: 16px;
+        margin: 2px 10px 0 10px;
+        transition: color 1s;
+      }
+    }
+
+    .card:hover {
+        span{
+            color: #FFFFFF;
+        }
+        border-color: #990C0C;
+        background-color: #990C0C;
+    }
+}
+
+/* styles for when the header is in sticky mode */
+.scrolling-wrapper.is-pinned {
+    background-color: #990C0C;
+    border-radius: 0 0 10px 10px;
+    .card {
+        border-color: #FFFFFF;
+        span {
+            color: #ffffff;
+        }
+    }
+    .card:hover {
+        span{
+            color: #990C0C;
+        }
+        border-color: #ffffff;
+        background-color: #ffffff;
+    }
+} 
+
+/* food categories */
+.title {
+    color: #990C0C;
+    font-size: 23px;
+    font-weight: 700;
+    font-family: 'Sen', sans-serif;
+}
+.price_heading {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Sen', sans-serif;
+}
+.header {
+    width: 100%;
+    padding: 0 11px 6px 5px;
+    /* flexbox */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.choice {
+    width: 100%;
+    min-height: 45px;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 0px 20px 0px 20px;
+
+    /* flexbox */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    // name
+    .choice_name {
+        color: #000000;
+        font-size: 19px;
+        font-weight: 400;
+        font-family: 'Sen', sans-serif;
+        text-transform: capitalize;
+        min-height: min-content;
+    }
+    // description
+    .choice_description{
+        color: #55596A;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'Sen', sans-serif;
+        padding-bottom: 6px;
+    }
+    // price
+    .choice_price {
+        color: #303030;
+        font-size: 18px;
+        font-weight: 400;
+        font-family: 'Sen', sans-serif;
+        white-space: nowrap;
+        margin-left: 10px;
+    }
+    @media (max-width: 350px) {
+        .choice_name {
+            font-size: 16px;
+        }
+        .choice_price {
+            font-size: 13px;
+            margin-left: 7px;
+        }
+    }
+}
+
+/* small screens */
+@media (max-width: 545px) and (min-width: 350px){
+    .choice {
+        padding: 0 13px 0 13px;
+    }
+}
+@media (max-width: 349px) {
+    .choice {
+        padding: 0 10px 0 10px;
+    }
+}
+
+/* Manakish food category */
+.category {
+    margin: 20px 24px 0 24px;
+    padding-bottom: 10px;
+    @media (max-width: 370px) {
+        margin: 20px 15px 0 15px;
+    }
+}
+/* End of manakish food category */
+
+/* pizza */
+.header_2 {
+    /* flexbox */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px 20px 10px;
+    @media(max-width: 360px){
+        padding: 15px 0 20px 0;
+    }
+
+    .sizes {
+        /* flexbox */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        span {
+            color: #181C2E;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: 'Sen', sans-serif;
+            margin-right: 10px;
+        }
+        button {
+            background: #F0F5FA;
+            height: 45px;
+            border: none;
+            border-radius: 50px;
+            color: #121223;
+            font-weight: 400;
+            font-family: 'Sen', sans-serif;
+            font-size: 16px;
+            margin-right: 10px;
+            padding: 0 20px 0 20px;
+            
+        }
+        @media(max-width: 410px){
+            
+            button{
+                padding: 0 15px 0 15px;
+                width: 100%;
+            }
+        }
+        @media(max-width: 360px){
+            span {
+                font-size: 14px;
+            }
+            button{
+                font-size: 14px;
+                margin-right: 5px;
+            }
+        }
+        @media(max-width: 310px){
+            button {
+                font-size: 12px;
+            }
+        }
+    }
+}
+/* price */
+.price {
+    padding-top: 5px;
+    color: #181C2E;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Sen', sans-serif;
+}
+@media(max-width: 320px){
+    .price {
+        font-size: 16.5px;
+    }
+}
+/* for small screens */
+
+
+// small screens
+.small_screen {
+    display: none;
+}
+@media(max-width: 627px){
+    .header_2 {
+        justify-content: flex-start;
+        .large_screen{
+           display: none;
+        }
+        .sizes {
+            width: 100%;
+        }
+    }
+    .small_screen {
+        display: block;
+    }
+}
+
+/* end of pizza category */
