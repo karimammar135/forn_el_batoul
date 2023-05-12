@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Change Language javascript file -->
+        <script src="{% static 'forn_el_batoul/language.js' %}"></script>
+
+        <!-- title -->
+        <title>Forn el Batoul</title>
+
+        <!-- icon -->
+        <link href="{% static 'forn_el_batoul/media/forn-logo.png' %}" rel="icon">
+
+        <!-- meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+        <!-- stylesheet -->
+        <link href="{% static 'forn_el_batoul/index.css' %}" rel="stylesheet">
+
+        <script src="https://kit.fontawesome.com/a122ebbd90.js" crossorigin="anonymous"></script>
+
+        <style>
+            
+        </style>
+
+    </head>
+
+    <body>
+        <!-- Identifying which page -->
+        <input type="hidden" name="page" value="select-language">
+
+        <div class="row-1 row">
+
+            <!-- Contents' container -->
+            <div class="wrapper">
+
+                <div class="main-container">
+                    <!-- Backery icon -->
+                    <img src="{% static 'forn_el_batoul/media/forn-logo.png' %}">
+
+                    <!-- Greeting -->
+                    <span class="welcome">Welcome to</span>
+                    <span class="header">Forn el Batoul</span>
+
+                    <!-- Language options -->
+                    <!-- buttons -->
+                    <a href="{% url 'home' %}" id="english" class="btn option option-1">English</a>
+                    <a href="{% url 'home' %}" id="arabic" class="btn option act-list-button">عربي</a>
+                </div>
+
+            </div>
+            <!-- End of contents' container -->
+
+        </div>
+        <div class="row-2 row"></div>
+        <div class="row-3 row"></div>
+        <div class="row-4 row"></div>
+        <div class="row-5 row"></div>
+        <div class="row-6 row"></div>
+        <div class="row-7 row"></div>
+        <div class="row-8 row"></div>
+        <div class="row-9 row"></div>
+        <div class="row-10 row"></div>
+        
+        </div>
+    </body>
+
+</html>
