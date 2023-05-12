@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Almarai&display=swap");
+/* arabic language font */
+.arabic-font {
+  font-family: "Almarai", sans-serif;
+}
+
+.english-font {
+  font-family: "Sen", sans-serif;
+}
+
 #main_menu_container {
   width: 100%;
   height: -moz-fit-content;
@@ -45,9 +55,24 @@
   display: flex;
   justify-content: space-between;
 }
-.slideshow-container .slider_top img {
+.slideshow-container .slider_top .return_btn {
   height: 45px;
-  cursor: pointer;
+  width: 45px;
+  background-color: #FFFFFF;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.5s;
+  /* flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slideshow-container .slider_top .return_btn i {
+  color: #181C2E;
+  font-size: 14px;
+}
+.slideshow-container .slider_top .return_btn:hover {
+  background-color: #990C0C;
 }
 .slideshow-container .slider_bottom {
   display: flex;
@@ -141,6 +166,11 @@
 .top_container {
   margin-left: 24px;
 }
+@media (max-width: 370px) {
+  .top_container {
+    margin-left: 15px;
+  }
+}
 
 /* Head */
 #head {
@@ -198,8 +228,7 @@
   font-size: 20px;
   color: #181C2E;
   font-weight: 700;
-  font-family: "Sen", sans-serif;
-  margin: 10px 0 7px 0;
+  margin: 10px 24px 7px 0;
   display: block;
 }
 
@@ -207,7 +236,6 @@
   color: #292C37;
   font-size: 14px;
   font-weight: 400;
-  font-family: "Sen", sans-serif;
   margin-right: 24px;
   margin-bottom: 5px;
 }
@@ -219,9 +247,16 @@
   overflow-x: auto; /* Safari */
   position: sticky;
   padding-bottom: 10px;
-  top: 0;
   top: -1px;
   transition: background-color 1s;
+}
+.scrolling-wrapper .card-1 {
+  margin-left: 24px;
+}
+@media (max-width: 370px) {
+  .scrolling-wrapper .card-1 {
+    margin-left: 15px;
+  }
 }
 .scrolling-wrapper .card {
   flex: 0 0 auto;
@@ -243,7 +278,6 @@
 .scrolling-wrapper .card span {
   color: #181C2E;
   font-weight: 400;
-  font-family: "Sen", sans-serif;
   font-size: 16px;
   margin: 2px 10px 0 10px;
   transition: color 1s;
@@ -280,14 +314,12 @@
   color: #990C0C;
   font-size: 23px;
   font-weight: 700;
-  font-family: "Sen", sans-serif;
 }
 
 .price_heading {
   color: #000000;
   font-size: 20px;
   font-weight: 400;
-  font-family: "Sen", sans-serif;
 }
 
 .header {
@@ -319,7 +351,6 @@
   color: #000000;
   font-size: 19px;
   font-weight: 400;
-  font-family: "Sen", sans-serif;
   text-transform: capitalize;
   min-height: -moz-min-content;
   min-height: min-content;
@@ -328,7 +359,6 @@
   color: #55596A;
   font-size: 14px;
   font-weight: 400;
-  font-family: "Sen", sans-serif;
   padding-bottom: 6px;
 }
 .choice .choice_price {
@@ -362,6 +392,7 @@
 }
 /* Manakish food category */
 .category {
+  scroll-margin-top: 80px;
   margin: 20px 24px 0 24px;
   padding-bottom: 10px;
 }
@@ -395,7 +426,6 @@
   color: #181C2E;
   font-size: 18px;
   font-weight: 400;
-  font-family: "Sen", sans-serif;
   margin-right: 10px;
 }
 .header_2 .sizes button {
@@ -405,7 +435,6 @@
   border-radius: 50px;
   color: #121223;
   font-weight: 400;
-  font-family: "Sen", sans-serif;
   font-size: 16px;
   margin-right: 10px;
   padding: 0 20px 0 20px;
@@ -437,7 +466,6 @@
   color: #181C2E;
   font-size: 20px;
   font-weight: 400;
-  font-family: "Sen", sans-serif;
 }
 
 @media (max-width: 320px) {
@@ -464,4 +492,12 @@
     display: block;
   }
 }
-/* end of pizza category *//*# sourceMappingURL=main_menu.css.map */
+/* end of pizza category */
+#small, #medium, #large {
+  transition: color 0.3s, background-color 0.3s;
+}
+
+#small.selected-size, #medium.selected-size, #large.selected-size {
+  background-color: #990C0C;
+  color: white;
+}/*# sourceMappingURL=main_menu.css.map */

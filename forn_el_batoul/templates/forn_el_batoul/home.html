@@ -6,9 +6,6 @@
 
 {% block head %}
 
-  <!-- Change Language javascript file -->
-  <script src="{% static 'forn_el_batoul/language.js' %}"></script>
-
   <!-- stylesheet -->
   <link href="{% static 'forn_el_batoul/home.css' %}" rel="stylesheet">
 
@@ -71,7 +68,7 @@
           <!-- Header -->
           <div class="header">
               <!-- Icon -->
-              <img src="{% static 'forn_el_batoul/media/oven-icon.png' %}" alt="oven-icon">
+              <img src="{% static 'forn_el_batoul/media/oven-icon.png' %}" style="width: 55px; padding: 7px 0 7px 0;" alt="oven-icon">
 
               <!-- forn el baoul greeting -->
               <span id="heading_title">Forn el Batoul</span>
@@ -86,8 +83,8 @@
                   <a class="drop_1" href="{% url 'home' %}">Contact us</a>
                   <a class="drop_2" href="{% url 'home' %}">Delivery</a>
                   <a class="drop_3" href="{% url 'home' %}">Location</a>
-                  <a class="drop_4" href="{% url 'home' %}">Working hours</a>
-                  <a class="drop_5" href="{% url 'index' %}">Menu</a>
+                  <a class="drop_4" href="{% url 'index' %}">Change language</a>
+                  <a class="drop_5" href="{% url 'main_menu' %}">Menu</a>
               </div>
           </div>
 
@@ -133,13 +130,13 @@
             {% for category in food_categories %}
               <!-- Give the right id -->
               {% if category.title == 'Manakesh' %}
-                <div class="manakesh category">
+                <a href="https://fornelbatoul.pythonanywhere.com/main_menu#manakish" class="manakesh category">
               {% elif category.title == 'Pizza' %}
-                <div class="pizza category">
+                <a href="https://fornelbatoul.pythonanywhere.com/main_menu#pizza" class="pizza category">
               {% elif category.title == 'Pastries' %}
-                <div class="pastries category">
+                <a href="https://fornelbatoul.pythonanywhere.com/main_menu#pastries" class="pastries category">
               {% else %}
-                <div class="snacks category">
+                <a href="https://fornelbatoul.pythonanywhere.com/main_menu#snacks" class="snacks category">
               {% endif %}
 
                   <!-- Category image -->
@@ -155,7 +152,7 @@
                   </div>
                   <!-- End of footer -->
 
-                </div>
+                </a>
             {% endfor %}
 
           </div>

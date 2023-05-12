@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function(){
     document.querySelector('.slideshow-container').style.opacity = '1';
     document.querySelector('.dot-0 span').classList.add('active'); 
     document.querySelector('.dot-0').classList.add('wrapper_a'); 
+    selectPrice('small');
 });
 
 let slide = 0;
@@ -13,7 +14,7 @@ let slide = 0;
 // Automate slide show
 var timer = setInterval( () =>{
     plusSlides(1);
-}, 8000);
+}, 4000);
 
 function currentSlide(n){
     slide = n-1;
@@ -103,27 +104,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 // Pizza price
-function pizza_price(size){
-    // Get the pizza price element
-    console.log(size);
-    pizza_price = document.querySelectorAll('.pizza_price');
+// rates
+const rates = {
+    small: 100,
+    medium: 200,
+    large: 300
+};
 
-    // Small size 200,000
-    if (size === "small"){
-        pizza_price.forEach(element => {
-            console.log('300,000');
-        });
+function selectPrice(size){
+    const pricePlaceHolders = document.getElementsByClassName('pizza_price');
+    for (let i = 0; i < pricePlaceHolders.length; i++){
+        pricePlaceHolders[i].innerText = `${rates[size]},000 LBP`;
     }
-    // Medium size 300,000
-    if (size === "medium"){
-        pizza_price.forEach(element => {
-            console.log('400,000');
-        });
-    }
-    // Large size 400,000
-    if (size === "large"){
-        pizza_price.forEach(element => {
-            console.log('500,000');
-        });
-    }
+    // Remove the all togles
+    document.querySelector(`#small`).classList.remove("selected-size");
+    document.querySelector(`#medium`).classList.remove("selected-size");
+    document.querySelector(`#large`).classList.remove("selected-size");
+
+    // Change button's style
+    document.querySelector(`#${size}`).classList.toggle("selected-size");
+
 }

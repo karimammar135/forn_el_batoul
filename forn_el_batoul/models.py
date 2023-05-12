@@ -12,18 +12,14 @@ class FoodCategory(models.Model):
 
 # Choices
 class Choice(models.Model):
-    choice = models.CharField(max_length=64)
+    order = models.IntegerField()
+    english_choice = models.CharField(max_length=64)
+    arabic_choice  = models.CharField(max_length=64)
     price = models.IntegerField(blank=True)
-    description = models.TextField(blank=True)
+    english_description = models.TextField(blank=True)
+    arabic_description = models.TextField(blank=True)
     food_category = models.ForeignKey(FoodCategory, on_delete=models.CASCADE, related_name="choices")
 
-    # Language options
-    LANGUAGE = [
-        ('Arabic', 'arabic'),
-        ('English', 'english'),
-    ]
-    language = models.CharField(max_length=10, choices=LANGUAGE)
-
     def __str__(self):
-        return f"choice: {self.choice}, price: {self.price}, Food Category: {self.food_category}, language: {self.language}"
+        return f"id:{self.id}, order: {self.order}, english_choice: {self.english_choice}, arabic_choice: {self.arabic_choice}, price: {self.price}, Food Category: {self.food_category}, english_description: {self.english_description}, arabic_description: {self.arabic_description}"
     
