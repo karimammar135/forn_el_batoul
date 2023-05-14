@@ -94,7 +94,11 @@
 
             <!-- menu choices -->
             {% for choice in manakish %}
-                <div class="choice">
+                {% if searched == choice.english_choice or searched == choice.arabic_choice %}
+                    <div class="choice" id="searched" style="scroll-margin-top: 75px;">
+                {% else %}
+                    <div class="choice">
+                {% endif %}
                     <div>
                         {% if choice.description == "" %}
                             <span class="choice_name english" style="margin-top: 5px; margin-bottom: 5px;">{{ choice.english_choice }}</span>
@@ -144,7 +148,11 @@
             
             <!-- menu choices -->
             {% for choice in pizza %}
-                <div class="choice">
+                {% if searched == choice.english_choice or searched == choice.arabic_choice %}
+                <div class="choice" id="searched" style="scroll-margin-top: 75px;">
+                {% else %}
+                    <div class="choice">
+                {% endif %}
                     <div>
                         {% if choice.description == "" %}
                             <span class="choice_name english" style="margin-top: 5px; margin-bottom: 5px;">{{ choice.english_choice }}</span>
@@ -176,7 +184,11 @@
             
             <!-- menu choices -->
             {% for choice in pastries %}
-                <div class="choice">
+                {% if searched == choice.english_choice or searched == choice.arabic_choice %}
+                    <div class="choice" id="searched" style="scroll-margin-top: 75px;">
+                {% else %}
+                    <div class="choice">
+                {% endif %}
                     <div>
                         {% if choice.description == "" %}
                             <span class="choice_name english" style="margin-top: 5px; margin-bottom: 5px;">{{ choice.english_choice }}</span>

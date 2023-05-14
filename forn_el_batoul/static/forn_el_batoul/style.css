@@ -38,16 +38,25 @@ General Style
   overflow: hidden;
 }
 
+.logo {
+  width: 60px;
+  margin-bottom: 30px;
+}
+
 .cd-intro-content {
+  
   /* vertically align inside its parent */
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   padding: 0 5%;
-  background:linear-gradient(0deg, rgba(150, 150, 150, 0.3), rgba(150, 150, 150, 0.3)), url(/static/forn_el_batoul/media/background.png);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(150, 150, 150, 0.1)), url(/static/forn_el_batoul/media/main-forn.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .cd-intro-content h1 {
   font-size: 2.4rem;
   color: #ffffff;
@@ -61,6 +70,7 @@ General Style
 }
 .cd-intro-content .action-wrapper {
   display: inline-block;
+  margin-bottom: 100px;
 }
 .cd-intro-content .action-wrapper::after {
   clear: both;
@@ -71,6 +81,9 @@ General Style
   float: left;
 }
 @media only screen and (min-width: 768px) {
+  .logo {
+    width: 100px;
+  }
   .cd-intro-content h1 {
     font-size: 5.2rem;
     font-weight: 300;
@@ -89,7 +102,7 @@ General Style
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
-  background-color: #202e4a;
+  background-color: #CDD2D6;
   border-radius: .25em;
   margin-right: 1.5em;
 }

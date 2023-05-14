@@ -36,20 +36,44 @@ def home(request):
         snacks,
     ]
 
-    # Return home page
-    return render(request, "forn_el_batoul/home.html", {
-        "food_categories": food_categories
-    })
-
-def main_menu(request):
-    # Get english menu choices from the database
+    # Get menu choices from the database
     manakish = FoodCategory.objects.get(category_name="Manakish").choices.all()
     pizza = FoodCategory.objects.get(category_name="Pizza").choices.all()
     pastries = FoodCategory.objects.get(category_name="Pastries").choices.all().order_by('order').values()
 
-    # Return main menu html page
-    return render(request, "forn_el_batoul/main_menu.html", {
-        "manakish": manakish,
-        "pizza": pizza,
-        "pastries": pastries
+    categories_choices = [manakish, pizza, pastries]
+
+    # Return home page
+    return render(request, "forn_el_batoul/home.html", {
+        "food_categories": food_categories,
+        "categories_choices": categories_choices
     })
+
+def main_menu(request):
+    # Get menu choices from the database
+    manakish = FoodCategory.objects.get(category_name="Manakish").choices.all()
+    pizza = FoodCategory.objects.get(category_name="Pizza").choices.all()
+    pastries = FoodCategory.objects.get(category_name="Pastries").choices.all().order_by('order').values()
+
+    ## Post method
+    if request.method == "POST":
+        # Get the searched name
+        searched = request.POST["searched"]
+
+        # Return main menu html page
+        return render(request, "forn_el_batoul/main_menu.html", {
+            "manakish": manakish,
+            "pizza": pizza,
+            "pastries": pastries,
+            "searched": searched
+        })
+    
+    ## Get method
+    else:
+        # Return main menu html page
+        return render(request, "forn_el_batoul/main_menu.html", {
+            "manakish": manakish,
+            "pizza": pizza,
+            "pastries": pastries,
+            "searched": "none"
+        })

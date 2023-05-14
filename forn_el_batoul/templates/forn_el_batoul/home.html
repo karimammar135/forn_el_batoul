@@ -53,6 +53,15 @@
 
   <script type="text/javascript" src="{% static 'forn_el_batoul/home.js' %}"></script>
 
+  <!-- autocomplete for search engine -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">
+  </script>
+
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
+
 {% endblock %}
 
 {% block body %}
@@ -101,7 +110,30 @@
           <div class="search-engine">
             <div class="search-1">
               <i class="fa-solid fa-magnifying-glass-arrow-right" id="search_icon"></i>
-              <input placeholder="Search Food">
+              <form action="http://127.0.0.1:8000/main_menu#searched" method="post">
+                {% csrf_token %}
+                <input placeholder="Search Food" id="search_input" name="searched">
+              </form>
+              
+              <!-- Autocomplete options -->
+              <script>
+                $(function () {
+                  var choices = [
+                    {% for category in categories_choices %}
+                      {% for choice in category %}
+                        "{{ choice.english_choice }}",
+                        "{{ choice.arabic_choice }}",
+                      {% endfor %}
+                    {% endfor %}
+                  ];
+                  console.log(choices);
+        
+                  $("#search_input").autocomplete({
+                    source: choices
+                  });
+                });
+              </script>
+
             </div>
             <div class="search-2">
               <div></div>
