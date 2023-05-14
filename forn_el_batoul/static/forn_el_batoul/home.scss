@@ -124,8 +124,8 @@
 
         // When focusing on the input outline the whole search engine
         .search-engine:focus-within {
-            border: thin solid rgb(153, 12, 12, 0.3);
-            box-shadow: 0px 4px 4px rgb(153, 12, 12, 0.3);
+            
+            box-shadow: 0px 4px 4px rgba(99, 99, 99, 0.8);
         }
 
         /* welcoming img */
