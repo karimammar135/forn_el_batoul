@@ -1,0 +1,200 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap');
+
+.body_container {
+    min-height: 100vh;
+    background-image: url('/static/forn_el_batoul/media/main-forn.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+
+    /* flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_container {
+    width: 100%;
+    max-width: 1160px;
+    @media (min-width: 1500px){
+        max-width: 1400px;
+    }
+    height: 100%;
+    margin: 20px 10px 20px 10px;
+    border-radius: 10px;
+    background-color: #000000;
+
+    /* flexbox */
+    display: flex;
+
+}
+
+/* Information container */
+.information_container {
+    height: 610px;
+    width: 380px;
+    background-color: #ffffff;
+    border-radius: 10px 0 0 10px;
+
+    /* flexbox */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    /* Container */
+    .container_1, .working_hours, .location, .contact_us{
+        width: 80%;
+        /* flexbox */
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    /* title */
+    .title {
+        color: #990C0C;
+        font-size: 20px;
+        font-family: 'Sen', sans-serif;
+        font-weight: 700;
+    }
+
+    /* description */
+    .description{
+        color: #292C37;
+        font-size: 14px;
+        font-family: 'Sen', sans-serif;
+        font-weight: 400;
+    }
+
+    /* working hours */
+    .working_hours {
+        .days {
+            color: #292C37;
+            font-size: 17.8px;
+            font-family: 'Sen', sans-serif;
+            font-weight: 400;
+            margin: 5px 0 5px 0;
+        }
+        .head {
+            color: #000000;
+            font-size: 17.8px;
+            font-family: 'Sen', sans-serif;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        .time {
+            color: #292C37;
+            font-size: 17.8px;
+            font-family: 'Sen', sans-serif;
+            font-weight: 400;
+        }
+        .open {
+            margin-bottom: 5px;
+            /* flexbox */
+            display: flex;
+            div {
+                /* flexbox */
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        .close {
+            /* flexbox */
+            display: flex;
+        }
+    }
+    /* End of working hours */
+    
+    .details {
+        color: #292C37;
+        font-size: 17.8px;
+        font-family: 'Sen', sans-serif;
+        font-weight: 400;
+    }
+
+    /* Location */
+    .location {
+        div {
+            /* flexbox */
+            display: flex;
+
+            i {
+                color: #990C0C;
+                padding-top: 4px;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    /* Contact us */
+    .contact_us {
+        span{
+            margin: 0px 0 5px 0;
+        }
+        .social_media {
+            /* flexbox */
+            display: flex;
+
+            i {
+                color: #990C0C;
+                font-size: 22px;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+/* Map container */
+.map_container {
+    flex-grow: 1;
+    height: 610px;
+    border-radius: 0 10px 10px 0;
+    background-image: url('/static/forn_el_batoul/media/location.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    /* return to home page anchor tag */
+    .return_btn {
+        margin: 15px 0 0 15px;
+        height: 45px;
+        width: 45px;
+        background-color: #FFFFFF;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: background-color 0.5s;
+
+        /* flexbox */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+            color: #181C2E;
+            font-size: 14px;
+        }
+    }
+    .return_btn:hover {
+        background-color: #990C0C;
+    }
+
+}
+
+/* small screens */
+@media (max-width: 790px) {
+    .main_container{
+        flex-direction: column-reverse;
+    }
+    .map_container {
+        height: 355px;
+        border-radius: 10px 10px 0 0;
+    }
+    .information_container {
+        border-radius: 0 0 10px 10px;
+        width: 100%;
+        .container_1, .working_hours, .location, .contact_us{
+            width: 87%;
+        }
+    }
+}

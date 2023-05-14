@@ -1,0 +1,77 @@
+{% extends 'forn_el_batoul/layout.html' %}
+
+{% load static %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block head %}
+    <link href="{% static 'forn_el_batoul/contact_us.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <!-- Identifying which page -->
+    <input type="hidden" name="page" value="contact_us">
+
+    <!-- Body container -->
+    <div class="body_container">
+        <!-- Main container -->
+        <div class="main_container">
+            <!-- Information container -->
+            <div class="information_container">
+                <!-- Container 1 -->
+                <div class="container_1">
+                    <span class="title">Forn EL Batoul</span>
+                    <span class="description">Our products are always made fresh to order and served hot and delicious. Experience the taste of our unique products!</span>
+                </div>
+                <!-- Working hours -->
+                <div class="working_hours">
+                    <span class="title">Working hours</span>
+                    <span class="days">Monday to Saturday</span>
+                    <!--  Open -->
+                    <div class="open">
+                        <span class="head">Open:</span>
+                        <div>
+                            <span class="time">08:00 AM to 12:30 PM</span>
+                            <span class="time">04:30 PM to 11:00 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Close -->
+                    <div class="close">
+                        <span class="head">Close:</span>
+                        <span class="time">12:30 PM to 04:30 PM</span>
+                    </div>
+                </div>
+                <!-- Location -->
+                <div class="location">
+                    <span class="title">Location</span>
+                    <div>
+                        <span class="details">Al-Mansoure, Janoub</span>
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <span class="details">Lebanon</span>
+                </div>
+                <!-- Contact us -->
+                <div class="contact_us">
+                    <span class="title">Contact us</span>
+                    <!-- Phone numbers -->
+                    <span class="details">+96171008125 / +96103295872</span>
+                    <!-- Social Media -->
+                    <div class="social_media">
+                        <a><i class="fa-brands fa-square-facebook"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/hasanamar99/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map container -->
+            <div class="map_container">
+                <!-- Return to home page -->
+                <a href="{% url 'home' %}" class="return_btn">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
+            </div>
+        </div>
+        <!-- End of main container -->
+    </div>
+{% endblock %}

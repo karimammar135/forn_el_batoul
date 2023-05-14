@@ -77,3 +77,9 @@ def main_menu(request):
             "pastries": pastries,
             "searched": "none"
         })
+
+
+# Contact us view
+def contact_us(request):
+    # Return contact html page
+    return render(request, 'forn_el_batoul/contact_us.html')
