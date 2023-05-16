@@ -202,11 +202,90 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.classList.add('arabic-font');
             }); 
         }
+        
         // If english don't change anything
         else {
             console.log('english');
             
         }
     }
+    // End of main menu
 
+    // Main menu
+    else if (page.value === 'contact_us') {
+        // Get elements
+        head = document.querySelector('.container_1 .title');
+        working_hours = document.querySelector('.working_hours .title');
+        location_head = document.querySelector('.location .title');
+        contact_us = document.querySelector('.contact_us .title');
+        description = document.querySelector('.description');
+        days = document.querySelector('.days');
+        open_div = document.querySelector('.open');
+        close_div = document.querySelector('.close');
+        open_span = document.querySelector('.open .head');
+        close_span = document.querySelector('.close .head');
+        location_div = document.querySelector('.location div');
+        location_span1 = document.querySelector('.location div .details');
+        location_span2 = document.querySelector('#lebanon');
+        contact_us_numbers = document.querySelector('.contact_us .details');
+        social_media = document.querySelector('.contact_us .social_media');
+        facebook = document.querySelector('.contact_us .social_media .facebook');
+        instagram = document.querySelector('.contact_us .social_media .instagram');
+
+        elements = [head, working_hours, location_head, contact_us, description, days, open_span, close_span, location_span1, location_span2, contact_us_numbers];
+        
+        // If selected language is arabic make changes
+        if (localStorage.getItem('language') === 'arabic') {
+            // Apply arabic font
+            head.innerText = 'فرن البتول';
+            working_hours.innerText = 'ساعات العمل';
+            location_head.innerText = 'الموقع';
+            contact_us.innerText = 'تواصل معنا';
+            description.innerText = 'دائما ما تكون منتجاتنا طازجة حسب الطلب وتقدم ساخنة ولذيذة. جرب طعم منتجاتنا الفريدة';
+            days.innerText = 'من الاثنين إلى السبت';
+            open_span.innerText = ': يفتح';
+            close_span.innerText = ': يغلق';
+            location_span1.innerText = 'المنصوري ، جنوب';
+            location_span2.innerText = 'لبنان';
+
+            // Styles
+            description.style.paddingTop = '15px';
+            open_div.style.justifyContent = 'flex-end';
+            close_div.style.justifyContent = 'flex-end';
+            open_span.style.order = '2';
+            open_span.style.margin = '0 0 0 13px';
+            close_span.style.order = '2';
+            close_span.style.margin = '0 0 0 10px';
+            location_div.style.justifyContent = 'flex-end';
+            location_div.style.margin = '5px 0 5px 0';
+            location_span1.style.order = '2';
+            location_span1.style.marginLeft = '10px';
+            contact_us_numbers.style.margin = '0 0 7px 0';
+            social_media.style.justifyContent = 'flex-end';
+            
+            instagram.style.margin = '0 5px 0 10px';
+            facebook.style.margin = '0 5px 0 5px';
+
+            days.style.margin = '4px 0 8px 0';
+
+            if (window.matchMedia("(max-width: 300px)").matches) {
+                open_span.style.margin = '0 0 0 7px';
+                close_span.style.margin = '0 0 0 4px';
+            } 
+
+            // Apply arabic font
+            elements.forEach((element) => {
+                element.classList.add('arabic-font');
+                element.style.textAlign = 'right';
+            });
+        }
+
+        // If selected language is english render the defualt page with no updates
+        else {
+            // Aplly english font
+            elements.forEach((element) => {
+                element.classList.add('english-font');
+            });
+        }
+    }
 });

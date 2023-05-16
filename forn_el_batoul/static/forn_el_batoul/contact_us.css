@@ -1,9 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@400;700&display=swap");
+/* arabic language font */
+.arabic-font {
+  font-family: "Alexandria", sans-serif;
+}
+
+.english-font {
+  font-family: "Sen", sans-serif;
+}
+
 .body_container {
   min-height: 100vh;
   background-image: url("/static/forn_el_batoul/media/main-forn.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   margin: 0;
   /* flexbox */
   display: flex;
@@ -15,7 +26,7 @@
   width: 100%;
   max-width: 1160px;
   height: 100%;
-  margin: 20px 10px 20px 10px;
+  margin: 20px 10px 35px 10px;
   border-radius: 10px;
   background-color: #000000;
   /* flexbox */
@@ -33,6 +44,7 @@
   width: 380px;
   background-color: #ffffff;
   border-radius: 10px 0 0 10px;
+  padding: 10px 0 20px 0;
   /* flexbox */
   display: flex;
   justify-content: space-around;
@@ -55,34 +67,38 @@
 .information_container .title {
   color: #990C0C;
   font-size: 20px;
-  font-family: "Sen", sans-serif;
   font-weight: 700;
 }
 .information_container .description {
   color: #292C37;
   font-size: 14px;
-  font-family: "Sen", sans-serif;
   font-weight: 400;
 }
 .information_container .working_hours .days {
   color: #292C37;
   font-size: 17.8px;
-  font-family: "Sen", sans-serif;
   font-weight: 400;
   margin: 5px 0 5px 0;
 }
 .information_container .working_hours .head {
-  color: #000000;
+  color: #B79B4B;
   font-size: 17.8px;
-  font-family: "Sen", sans-serif;
   font-weight: 700;
   margin-right: 10px;
+  white-space: nowrap;
+}
+@media (max-width: 300px) {
+  .information_container .working_hours .head {
+    font-size: 16px;
+    margin-right: 5px;
+  }
 }
 .information_container .working_hours .time {
   color: #292C37;
   font-size: 17.8px;
   font-family: "Sen", sans-serif;
   font-weight: 400;
+  white-space: nowrap;
 }
 .information_container .working_hours .open {
   margin-bottom: 5px;
@@ -101,7 +117,6 @@
 .information_container .details {
   color: #292C37;
   font-size: 17.8px;
-  font-family: "Sen", sans-serif;
   font-weight: 400;
 }
 .information_container .location div {
@@ -122,8 +137,10 @@
 }
 .information_container .contact_us .social_media i {
   color: #990C0C;
-  font-size: 22px;
-  margin-left: 10px;
+  font-size: 26px;
+  margin-right: 7px;
+  margin-left: 8px;
+  margin-top: 2px;
 }
 
 /* Map container */
@@ -168,6 +185,7 @@
     border-radius: 10px 10px 0 0;
   }
   .information_container {
+    padding: 2px 0 20px 0;
     border-radius: 0 0 10px 10px;
     width: 100%;
   }
