@@ -90,7 +90,7 @@
 
               <div id="myDropdown" class="dropdown-content">
                   <a class="drop_1" href="{% url 'contact_us' %}">Contact us</a>
-                  <a class="drop_2" href="{% url 'home' %}">Delivery</a>
+                  <a class="drop_2" href="{% url 'contact_us' %}">Working hours</a>
                   <a class="drop_3" href="{% url 'home' %}">Location</a>
                   <a class="drop_4" href="{% url 'index' %}">Change language</a>
                   <a class="drop_5" href="{% url 'main_menu' %}">Menu</a>
@@ -110,7 +110,7 @@
           <div class="search-engine">
             <div class="search-1">
               <i class="fa-solid fa-magnifying-glass-arrow-right" id="search_icon"></i>
-              <form action="https://forn_el_batoul.pythonanywhere.com/main_menu#searched" method="post">
+              <form action="https://fornelbatoul.pythonanywhere.com/main_menu#searched" method="post">
                 {% csrf_token %}
                 <input placeholder="Search Food" id="search_input" name="searched">
               </form>
@@ -178,7 +178,7 @@
                   <div class="category-footer">
                     <div>
                       <span class="category-name">{{ category.title }}</span>
-                      <span class="details">12 menu</span>
+                      <span class="details">{{ category.total_choices }} menu</span>
                     </div>
                     <i class="fa-solid fa-chevron-right"></i>
                   </div>

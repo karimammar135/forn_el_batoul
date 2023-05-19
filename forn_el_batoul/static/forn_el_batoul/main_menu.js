@@ -104,14 +104,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 // Pizza price
-// rates
-const rates = {
-    small: 100,
-    medium: 200,
-    large: 300
-};
-
 function selectPrice(size){
+    var rates= document.getElementById("rates").innerHTML;
+    var rates = JSON.parse(rates);
+    
     const pricePlaceHolders = document.getElementsByClassName('pizza_price');
     for (let i = 0; i < pricePlaceHolders.length; i++){
         pricePlaceHolders[i].innerText = `${rates[size]},000 LBP`;
@@ -124,4 +120,41 @@ function selectPrice(size){
     // Change button's style
     document.querySelector(`#${size}`).classList.toggle("selected-size");
 
+}
+
+// Edit price
+function edit(action){
+    // Get required html elements
+    change_price_containers = document.querySelectorAll('.change_price_container');
+    choice_prices = document.querySelectorAll('.choice_price');
+    done_btn = document.querySelector('#done');
+
+    if (action === 'edit'){
+        // Eterate over each form and show it on the DOM
+        change_price_containers.forEach(el => {
+            el.style.display = 'flex';
+        });
+
+        // Eterate over each price span and hide it from the DOM
+        choice_prices.forEach(el => {
+            el.style.display = 'none';
+        });
+
+        // Show done btn
+        done_btn.style.display = 'block';
+    }
+    else {
+        // Eterate over each form and hide it on the DOM
+        change_price_containers.forEach(el => {
+            el.style.display = 'none';
+        });
+
+        // Eterate over each price span and hide it from the DOM
+        choice_prices.forEach(el => {
+            el.style.display = 'block';
+        });
+
+        // Hide done btn
+        done_btn.style.display = 'none';
+    }
 }

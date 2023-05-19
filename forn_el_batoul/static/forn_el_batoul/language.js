@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             pastries.innerHTML = 'معجنات';
             snacks.innerHTML = 'وجبات خفيفة';
             drop_1.innerHTML = 'اتصل بنا';
-            drop_2.innerHTML = 'توصيل ديليفاري';
+            drop_2.innerHTML = 'ساعات العمل';
             drop_3.innerHTML = 'الموقع';
             drop_4.innerHTML = 'غير اللغة';
             drop_5.innerHTML = 'قائمة طعام';

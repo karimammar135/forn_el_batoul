@@ -10,6 +10,42 @@
 
     <script src="{% static 'forn_el_batoul/main_menu.js' %}"></script>
 
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function dropdown() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+    
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+    
+        // Close the dropdown if the user clicks outside of it
+        window.ontouchend = function(event) {
+          if (!event.target.matches('.dropbtn') && !event.target.matches('#myDropdown a')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+    </script>
+
 {% endblock %}
 
 {% block body %}
@@ -23,12 +59,23 @@
 
             <!-- Top -->
             <div class="slider_top">
-                <a href="{% url 'home' %}" class="return_btn">
+                <a href="{% url 'home' %}" class="return_btn top_btn">
                     <i class="fa-solid fa-chevron-left"></i>
                 </a>
-                <a href="#" class="return_btn">
-                    <i class="fa-solid fa-ellipsis" style="font-size: 20px;"></i>
-                </a>
+                
+                <!-- dropdown -->
+                <div class="dropdown">
+                    <div class="top_btn">
+                        <i class="fa-solid fa-ellipsis dropbtn" onclick="dropdown()" style="font-size: 20px; transition: none;" id="dropbtn"></i>
+                    </div>
+                    
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="{% url 'contact_us' %}">Contact us</a>
+                        {% if current_user.is_superuser %}
+                            <a onclick="edit('edit')">Edit</a>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
 
             <!-- Bottom -->
@@ -92,6 +139,11 @@
                 <span class="price_heading">Price</span>
             </div>
 
+            <div style="display: flex; justify-content: flex-end;">
+                <button id="done" onclick="edit('done')">Done</button>
+            </div>
+            
+
             <!-- menu choices -->
             {% for choice in manakish %}
                 {% if searched == choice.english_choice or searched == choice.arabic_choice %}
@@ -110,7 +162,15 @@
                             <span class="choice_description arabic" style="display: none;">{{ choice.arabic_description }}</span>
                         {% endif %}
                     </div>
-                    <span class="choice_price">{{ choice.price }},000 LBP</span>
+                    
+                    <!-- If user is superuser give the ability to change the prices -->
+                    <form class="change_price_container" action="{% url 'change_price' %}" method="post" style="display: none;">
+                        {% csrf_token %}
+                        <input type="text" name="new_price" value="{{ choice.price }}">
+                        <input type="hidden" name="choice_id" value="{{ choice.id }}">
+                        <input type="submit" value="update">
+                    </form>
+                    <span class="choice_price">{{ choice.price }},000 LBP</span> 
                 </div>
             {% endfor %}
             <!-- End of menu choices -->
@@ -133,6 +193,7 @@
             </div>
 
             <!-- sizes -->
+            <div style="visibility: hidden; height: 0px;" id="rates">{{ pizza_rates|safe }}</div>
             <div class="header_2">
                 <div class="sizes">
                     <span>Sizes:</span>
@@ -145,7 +206,22 @@
                     <span class="price large_screen pizza_price value"></span>
                 </div>
             </div>
+
+            <!-- If user is superuser give the ability to change the prices -->
+            <div style="width: 100%; display: flex; justify-content: center; margin-bottom: 20px;">
+                <form class="change_price_container" style="width: 100%; max-width: 400px; display: none;" action="{% url 'change_rate' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="new_price" placeholder="New Price">
+                    <select id="size" name="size" style="margin-bottom: 5px;">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>                          
+                    <input type="submit" value="update">
+                </form>
+            </div>
             
+
             <!-- menu choices -->
             {% for choice in pizza %}
                 {% if searched == choice.english_choice or searched == choice.arabic_choice %}
@@ -200,7 +276,15 @@
                             <span class="choice_description arabic" style="display: none;">{{ choice.arabic_description }}</span>
                         {% endif %}
                     </div>
+                    <!-- If user is superuser give the ability to change the prices -->
+                    <form class="change_price_container" action="{% url 'change_price' %}" method="post" style="display: none;">
+                        {% csrf_token %}
+                        <input type="text" name="new_price" value="{{ choice.price }}">
+                        <input type="hidden" name="choice_id" value="{{ choice.id }}">
+                        <input type="submit" value="change">
+                    </form>
                     <span class="choice_price">{{ choice.price }},000 LBP</span>
+                    
                 </div>
             {% endfor %}
 

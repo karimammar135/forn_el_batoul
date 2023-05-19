@@ -23,3 +23,10 @@ class Choice(models.Model):
     def __str__(self):
         return f"id:{self.id}, order: {self.order}, english_choice: {self.english_choice}, arabic_choice: {self.arabic_choice}, price: {self.price}, Food Category: {self.food_category}, english_description: {self.english_description}, arabic_description: {self.arabic_description}"
     
+# Pizza Rates
+class PizzaRate(models.Model):
+    size = models.CharField(max_length=10)
+    price = models.IntegerField()
+
+    def __str__(self):
+        return f"Size: {self.size}, price:{self.price}"
