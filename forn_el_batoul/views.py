@@ -70,8 +70,8 @@ def home(request):
 
 def main_menu(request):
     # Get menu choices from the database
-    manakish = FoodCategory.objects.get(category_name="Manakish").choices.all()
-    pizza = FoodCategory.objects.get(category_name="Pizza").choices.all()
+    manakish = FoodCategory.objects.get(category_name="Manakish").choices.all().order_by('order').values()
+    pizza = FoodCategory.objects.get(category_name="Pizza").choices.all().order_by('order').values()
     pastries = FoodCategory.objects.get(category_name="Pastries").choices.all().order_by('order').values()
 
     # Get Pizza rates

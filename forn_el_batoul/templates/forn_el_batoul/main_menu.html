@@ -70,7 +70,7 @@
                     </div>
                     
                     <div id="myDropdown" class="dropdown-content">
-                        <a href="{% url 'contact_us' %}">Contact us</a>
+                        <a id="contact_us_drp" href="{% url 'contact_us' %}">Contact us</a>
                         {% if current_user.is_superuser %}
                             <a onclick="edit('edit')">Edit</a>
                         {% endif %}

@@ -147,19 +147,19 @@
 }
 
 .background-1 {
-  background-image: url("/static/forn_el_batoul/media/snacks.jpg");
+  background-image: url("/static/forn_el_batoul/media/forn_1.JPG");
 }
 
 .background-2 {
-  background-image: url("/static/forn_el_batoul/media/pastries.jpeg");
+  background-image: url("/static/forn_el_batoul/media/snacks.jpg");
 }
 
 .background-3 {
-  background-image: url("/static/forn_el_batoul/media/pizza.jpeg");
+  background-image: url("/static/forn_el_batoul/media/pastries.jpeg");
 }
 
 .background-4 {
-  background-image: url("/static/forn_el_batoul/media/manakesh.jpeg");
+  background-image: url("/static/forn_el_batoul/media/pizza.jpeg");
 }
 
 /* main container */
@@ -579,6 +579,9 @@
 
 #done {
   display: none;
+  align-self: flex-end;
+  justify-content: center;
+  align-items: center;
   font-size: 14px;
   font-weight: 400;
   font-family: "Sen", sans-serif;

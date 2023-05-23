@@ -55,7 +55,7 @@ function plusSlides(n){
         if (n === -1){
             // If slide reaches minimum number of images make plus instead of minus
             if (slide == 0){
-                slide = 2;
+                slide = 4;
             } else {
                 slide --;
             }
@@ -141,7 +141,7 @@ function edit(action){
         });
 
         // Show done btn
-        done_btn.style.display = 'block';
+        done_btn.style.display = 'flex';
     }
     else {
         // Eterate over each form and hide it on the DOM

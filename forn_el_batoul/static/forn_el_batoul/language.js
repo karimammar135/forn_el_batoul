@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
             drop_1.innerHTML = 'اتصل بنا';
             drop_2.innerHTML = 'ساعات العمل';
             drop_3.innerHTML = 'الموقع';
-            drop_4.innerHTML = 'غير اللغة';
-            drop_5.innerHTML = 'قائمة طعام';
+            drop_4.innerHTML = 'قائمة الطعام';
+            drop_5.innerHTML = 'غير اللغة';
 
             // Fix width
             [snacks, pizza, pastries, manakesh].forEach((element) => {
@@ -111,8 +111,9 @@ document.addEventListener('DOMContentLoaded', function() {
         pizza_choices_spans = document.querySelectorAll('#pizza .choice div span');
         header_2 = document.querySelector('.header_2');
         pizza_header = document.querySelector('#pizza .header');
+        contact_us_dr = document.querySelector('#contact_us_drp');
 
-        elements = [greeting, description, scrolling_wrapper, card_1, card_2, card_3, card_4, card_5, manakish, pizza, pastries, snacks, pizza_price_key, pizza_price_key_small, sizes, small, medium, large, coming_soon];
+        elements = [greeting, description, scrolling_wrapper, card_1, card_2, card_3, card_4, card_5, manakish, pizza, pastries, snacks, pizza_price_key, pizza_price_key_small, sizes, small, medium, large, coming_soon, contact_us_drp];
 
         // If selected language is arabic change the html elements' inner html to arabic
         if (localStorage.getItem('language') === 'arabic') {
@@ -137,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
             medium.innerHTML = 'وسط';
             large.innerHTML = 'كبير';
             coming_soon.innerHTML = '! قريباً';
+            contact_us_drp.innerHTML = 'اتصل بنا';
 
             price_heading.forEach((el) => {
                 el.innerHTML = 'السعر';
